@@ -2,6 +2,7 @@ Linux:
 	Requirements:
 		cmake
 		g++
+		sdl
 
 	Compile:
 		Open Terminal in the build-linux folder.
@@ -15,6 +16,8 @@ Windows:
 	Requirements:
 		CMake 2.8
 		Microsoft Visual Studio 2008
+		SDL
+			Copy SDL.dll to C:\Windows?
 
 	Compile:
 		Start CMake (cmake-gui).
@@ -23,9 +26,14 @@ Windows:
 		Click Configure.
 		Select Visual Studio 9 2008.
 		Click Finish.
+		SDLMAIN_LIBRARY: C:/SDL-1.2.14/lib/SDL.dll
+		SDL_INCLUDE_DIR: C:/SDL-1.2.14/include
 		Click Configure.
 		Click Generate.
 		Open Project.sln in Path/To/Engine/Engine/build-VS.
+		Add to Example->Properties->Linker->Input->Additional Dependencies:
+			opengl32.lib
+			C:\SDL-1.2.14\lib\SDL.lib
 		Build Solution.
 		Set Example as StartUp Project.
 
