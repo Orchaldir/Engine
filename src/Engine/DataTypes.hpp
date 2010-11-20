@@ -12,6 +12,10 @@ typedef signed char    int8;
 typedef unsigned int   uint32;
 typedef signed int     int32;
 
+typedef float          scalar32;
+typedef double         scalar64;
+typedef scalar32       scalar;
+
 
 // std
 
