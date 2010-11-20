@@ -3,7 +3,6 @@
 
 
 #include <assert.h>
-#include <iostream>
 
 
 typedef unsigned char  uint8;
@@ -19,7 +18,13 @@ typedef scalar32       scalar;
 
 // std
 
+#include <iostream>
+
 using std::cout;
 using std::endl;
+
+#include <string>
+
+using std::string;
 
 #endif

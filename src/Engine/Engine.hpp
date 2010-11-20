@@ -3,14 +3,21 @@
 
 
 #include "DataTypes.hpp"
+#include "Graphic/iGraphic.hpp"
 
 
 class Engine
 {
+	private:
+
+		Graphic::iGraphic* mGraphic;
+
 	public:
 
-		Engine();
+		Engine(const string& pTitle, uint32 pSizeX, uint32 pSizeY);
 		~Engine();
+
+		void run();
 };
 
 #endif

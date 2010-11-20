@@ -2,14 +2,25 @@ PROJECT(Engine)
 
 SET(NAME Engine)
 
-SET(HEADERS 
+SET(HEADERS
+	Graphic/Window/iWindow.hpp
+	Graphic/Window/Window_OpenGL.hpp
+	Graphic/iGraphic.hpp
+	Graphic/Graphic_OpenGL.hpp
 	DataTypes.hpp
 	Engine.hpp
 	)
 
 SET(SOURCES
+	Graphic/Window/Window_OpenGL.cpp
+	Graphic/Graphic_OpenGL.cpp
 	Engine.cpp
 	)
+
+FIND_PACKAGE(OpenGL REQUIRED)
+FIND_PACKAGE(SDL REQUIRED)
+
+INCLUDE_DIRECTORIES(include ${SDL_INCLUDE_DIR})
 
 IF(UNIX)
 	SET_SOURCE_FILES_PROPERTIES(${SOURCES} COMPILE_FLAGS "-DUNIX -DMAJOR=${PROJECT_MAJOR_VERSION} -DMINOR=${PROJECT_MINOR_VERSION}")
@@ -22,6 +33,9 @@ ENDIF(WIN32)
 ADD_LIBRARY(${NAME} ${SOURCES} ${HEADERS})
 
 IF(UNIX)
-	TARGET_LINK_LIBRARIES(${NAME} ${CMAKE_DL_LIBS})
+	TARGET_LINK_LIBRARIES(${NAME} ${CMAKE_DL_LIBS}
+		${OPENGL_LIBRARIES}
+		${SDL_LIBRARY}
+		SDLmain)
 ENDIF(UNIX)
 
