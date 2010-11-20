@@ -1,0 +1,33 @@
+Linux:
+	Requirements:
+		cmake
+		g++
+
+	Compile:
+		Open Terminal in the build folder.
+		Terminal: cmake ../src
+		Terminal: make
+
+	Run:
+		Terminal: ../bin/Example
+
+Windows:
+	Requirements:
+		CMake 2.8
+		Microsoft Visual Studio 2008
+
+	Compile:
+		Start CMake (cmake-gui).
+		Where is the source code: Path/To/Engine/src
+		Where to build the binaries: Path/To/Engine/build-VS
+		Click Configure.
+		Select Visual Studio 9 2008.
+		Click Finish.
+		Click Configure.
+		Click Generate.
+		Open Project.sln in Path/To/Engine/Engine/build-VS.
+		Build Solution.
+		Set Example as StartUp Project.
+
+	Run:
+		Run it with Ctrl+F5.
