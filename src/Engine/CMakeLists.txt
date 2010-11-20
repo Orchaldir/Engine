@@ -3,8 +3,8 @@ PROJECT(Engine)
 SET(NAME Engine)
 
 SET(HEADERS 
-	DataTypes.h
-	Engine.h
+	DataTypes.hpp
+	Engine.hpp
 	)
 
 SET(SOURCES
