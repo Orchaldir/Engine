@@ -4,7 +4,7 @@ Linux:
 		g++
 
 	Compile:
-		Open Terminal in the build folder.
+		Open Terminal in the build-linux folder.
 		Terminal: cmake ../src
 		Terminal: make
 
