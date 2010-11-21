@@ -9,7 +9,7 @@ namespace Utility
 {
 	Library_Linux::Library_Linux(const string& pName)
 	{
-		const string fComplateName = "./lib" + pName + ".so";
+		const string fComplateName = "lib" + pName + ".so";
 		cout << "Library_Linux::loadLibrary(\"" << fComplateName << "\")" << endl;
 
 		mHandle = dlopen(fComplateName.c_str(), RTLD_LAZY);

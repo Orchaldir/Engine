@@ -2,11 +2,15 @@
 #define _Graphic_OpenGL_h_
 
 
-#include "iGraphic.hpp"
+#include "../Engine/Graphic/iGraphic.hpp"
 
 
 namespace Graphic
 {
+	extern "C" iGraphic* createGraphic(const string& pTitle, uint32 pSizeX, uint32 pSizeY);
+	extern "C" void destroyGraphic(iGraphic* pGraphic);
+
+
 	class Graphic_OpenGL : public iGraphic
 	{
 		private:

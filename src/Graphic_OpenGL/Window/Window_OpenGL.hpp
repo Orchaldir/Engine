@@ -2,8 +2,8 @@
 #define _Window_OpenGL_h_
 
 
-#include "../../DataTypes.hpp"
-#include "iWindow.hpp"
+#include "../../Engine/DataTypes.hpp"
+#include "../../Engine/Graphic/Window/iWindow.hpp"
 
 
 namespace Graphic
