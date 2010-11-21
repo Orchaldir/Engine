@@ -33,6 +33,13 @@ namespace Utility
 	{
 		assert(0 != mHandle && "Library handle invalid!");
 
-		return dlsym(mHandle, pName.c_str());
+		void* fFunction = dlsym(mHandle, pName.c_str());
+
+		if(0 == fFunction)
+		{
+			cout << "ERROR:" << dlerror() << endl;
+		}
+
+		return fFunction;
 	}
 }

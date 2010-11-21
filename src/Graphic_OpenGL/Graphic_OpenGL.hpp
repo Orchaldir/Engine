@@ -7,9 +7,14 @@
 
 namespace Graphic
 {
-	extern "C" iGraphic* createGraphic(const string& pTitle, uint32 pSizeX, uint32 pSizeY);
-	extern "C" void destroyGraphic(iGraphic* pGraphic);
+	#ifdef UNIX
+		#define DLL extern "C"
+	#elif WIN
+		#define DLL extern "C" __declspec( dllexport )
+	#endif
 
+	DLL iGraphic* createGraphic(const string& pTitle, uint32 pSizeX, uint32 pSizeY);
+	DLL void destroyGraphic(iGraphic* pGraphic);
 
 	class Graphic_OpenGL : public iGraphic
 	{

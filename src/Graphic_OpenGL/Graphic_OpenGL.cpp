@@ -10,12 +10,12 @@
 
 namespace Graphic
 {
-	extern "C" iGraphic* createGraphic(const string& pTitle, uint32 pSizeX, uint32 pSizeY)
+	DLL iGraphic* createGraphic(const string& pTitle, uint32 pSizeX, uint32 pSizeY)
 	{
 		return new Graphic_OpenGL(pTitle, pSizeX, pSizeY);
 	}
 
-	extern "C" void destroyGraphic(iGraphic* pGraphic)
+	DLL void destroyGraphic(iGraphic* pGraphic)
 	{
 		if(0 != pGraphic)
 		{

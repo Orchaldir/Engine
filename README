@@ -31,8 +31,8 @@ Windows:
 		Click Configure.
 		Click Generate.
 		Open Project.sln in Path/To/Engine/build-VS.
-		Add to Example->Properties->Linker->Input->Additional Dependencies:
-			opengl32.lib
+		Add to Graphic_OpenGL->Properties->Linker->Input->Additional Dependencies:
+			// allready there this time: opengl32.lib
 			C:\SDL-1.2.14\lib\SDL.lib
 		Build Solution.
 		Set Example as StartUp Project.

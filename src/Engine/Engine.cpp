@@ -7,7 +7,7 @@
 #ifdef UNIX
 #include "Utility/Library/Library_Linux.hpp"
 #elif WIN
-
+#include "Utility/Library/Library_Windows.hpp"
 #endif
 
 
@@ -24,10 +24,10 @@ Engine::Engine(const string& pTitle, uint32 pSizeX, uint32 pSizeY) :
 	#ifdef UNIX
 		mGraphicLibrary = new Utility::Library_Linux("Graphic_OpenGL");
 	#elif WIN
-
+		mGraphicLibrary = new Utility::Library_Windows("Graphic_OpenGL");
 	#endif
 
-	mCreateGraphic = reinterpret_cast<createGraphic>(mGraphicLibrary->getFunction("createGraphic"));
+	mCreateGraphic = (createGraphic)mGraphicLibrary->getFunction("createGraphic");//reinterpret_cast<createGraphic>(mGraphicLibrary->getFunction("createGraphic"));
 
 	if(0 == mCreateGraphic)
 	{
