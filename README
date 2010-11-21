@@ -30,7 +30,7 @@ Windows:
 		SDL_INCLUDE_DIR: C:/SDL-1.2.14/include
 		Click Configure.
 		Click Generate.
-		Open Project.sln in Path/To/Engine/Engine/build-VS.
+		Open Project.sln in Path/To/Engine/build-VS.
 		Add to Example->Properties->Linker->Input->Additional Dependencies:
 			opengl32.lib
 			C:\SDL-1.2.14\lib\SDL.lib

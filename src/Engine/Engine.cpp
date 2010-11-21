@@ -4,10 +4,27 @@
 #include "Graphic/Window/iWindow.hpp"
 #include "Graphic/Graphic_OpenGL.hpp"
 
+#ifdef UNIX
+#include "Utility/Library/Library_Linux.hpp"
+#elif WIN
 
-Engine::Engine(const string& pTitle, uint32 pSizeX, uint32 pSizeY)
+#endif
+
+
+Engine::Engine(const string& pTitle, uint32 pSizeX, uint32 pSizeY) :
+	mGraphicLibrary(0),
+	mGraphic(0)
 {
 	cout << "Engine::Engine()" << endl;
+
+	// load Graphic
+
+	cout << " load graphic" << endl;
+
+	mGraphicLibrary = new Utility::Library_Linux("Graphic_OpenGL");
+
+	cout << " init graphic" << endl;
+
 	mGraphic = new Graphic::Graphic_OpenGL(pTitle, pSizeX, pSizeY);
 }
 
@@ -18,6 +35,11 @@ Engine::~Engine()
 	if(0 != mGraphic)
 	{
 		delete mGraphic;
+	}
+
+	if(0 != mGraphicLibrary)
+	{
+		delete mGraphicLibrary;
 	}
 }
 

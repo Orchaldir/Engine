@@ -7,6 +7,8 @@ SET(HEADERS
 	Graphic/Window/Window_OpenGL.hpp
 	Graphic/iGraphic.hpp
 	Graphic/Graphic_OpenGL.hpp
+	Utility/Library/iLibrary.hpp
+	Utility/Library/Library_Linux.hpp
 	DataTypes.hpp
 	Engine.hpp
 	)
@@ -14,6 +16,7 @@ SET(HEADERS
 SET(SOURCES
 	Graphic/Window/Window_OpenGL.cpp
 	Graphic/Graphic_OpenGL.cpp
+	Utility/Library/Library_Linux.cpp
 	Engine.cpp
 	)
 
